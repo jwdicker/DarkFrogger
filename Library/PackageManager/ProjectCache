@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638370501020000000
-    m_Hash: 1271420989
+      ticks: 638372532180000000
+    m_Hash: 2537742017
   m_LockFileStatus:
     m_FilePath: E:/Docs/Unity Projects/DarkFrogger/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638370501020000000
-    m_Hash: 1432575667
+      ticks: 638372532180000000
+    m_Hash: 4110846148
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -3129,6 +3129,8 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.0
+    - 1.4.1
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -3144,6 +3146,8 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.0
+    - 1.4.1
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12

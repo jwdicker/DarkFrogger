@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DarkFrogger.sln"
+    "dotnet.defaultSolution": "DarkFrogger.sln",
+    "dotnet.preferCSharpExtension": true
 }
