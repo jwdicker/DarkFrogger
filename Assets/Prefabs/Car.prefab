@@ -45,10 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5454a7e9f4483d442a9d720c3b11039f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: 1
-  speed: 10
-  wrapDistance: 30
-  minDistance: -30
+  directionalSpeed: 10
+  rightDistanceBound: 30
+  leftDistanceBound: 0
 --- !u!1 &5335202433266785689
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,6 +60,7 @@ GameObject:
   - component: {fileID: 6061403361314563953}
   - component: {fileID: 5082875090539542181}
   - component: {fileID: 6197684454739072114}
+  - component: {fileID: 244087165611938744}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -148,7 +148,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -156,3 +156,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &244087165611938744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335202433266785689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceab8ffc677c04c1d8d487b0efe9f8d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
