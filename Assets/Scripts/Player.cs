@@ -1,45 +1,67 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-//Jump code
 [RequireComponent(typeof(Rigidbody))]
-
-public class Player : MonoBehaviour {
-    
-    //jump
+public class Player : MonoBehaviour
+{
+    // Jump code
     public Vector3 jump;
     public float jumpForce = 3.0f;
 
     public bool isGrounded;
-    Rigidbody rb;
-    void Start(){
+    private bool canMove = true;
+    private Rigidbody rb;
+
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float keyDelay = 0.2f; // Adjust the delay time as needed
+
+    void Start()
+    {
         rb = GetComponent<Rigidbody>();
         jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
-    void OnCollisionStay(){
+    void OnCollisionStay()
+    {
         isGrounded = true;
     }
 
-    [SerializeField] private float moveSpeed = 7f;
-    private void Update() {
-        // Vector2 inputVector = new Vector2(0, 0);
+    private IEnumerator ResetMovementDelay()
+    {
+        yield return new WaitForSeconds(keyDelay);
+        canMove = true;
+    }
+
+    private void Update()
+    {
         Vector3 inputVector = new Vector3(0, 0, 0);
-        if (Input.GetKeyDown(KeyCode.W)) {
+
+        if (Input.GetKeyDown(KeyCode.W) && canMove)
+        {
             inputVector.y = +1;
+            canMove = false;
+            StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKeyDown(KeyCode.S)) {
+        if (Input.GetKeyDown(KeyCode.S) && canMove)
+        {
             inputVector.y = -1;
+            canMove = false;
+            StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKeyDown(KeyCode.A)) {
+        if (Input.GetKeyDown(KeyCode.A) && canMove)
+        {
             inputVector.x = -1;
+            canMove = false;
+            StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKeyDown(KeyCode.D)) {
+        if (Input.GetKeyDown(KeyCode.D) && canMove)
+        {
             inputVector.x = +1;
+            canMove = false;
+            StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKey(KeyCode.Space)&& isGrounded){
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
@@ -47,7 +69,6 @@ public class Player : MonoBehaviour {
         inputVector = inputVector.normalized;
 
         Vector3 moveDir = new Vector3(inputVector.x, inputVector.z, inputVector.y);
-        transform.position += moveDir * moveSpeed *  Time.deltaTime;
-        // Debug.Log(inputVector);
+        transform.position += moveDir * moveSpeed * Time.deltaTime;
     }
 }
