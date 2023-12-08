@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465788, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -617,14 +617,6 @@ PrefabInstance:
     - target: {fileID: 2804376671336746004, guid: 78ff568257a3c234692cc1b7a2efd5d2, type: 3}
       propertyPath: m_Name
       value: Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539020538981275864, guid: 78ff568257a3c234692cc1b7a2efd5d2, type: 3}
-      propertyPath: leftDistanceBound
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8539020538981275864, guid: 78ff568257a3c234692cc1b7a2efd5d2, type: 3}
-      propertyPath: rightDistanceBound
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
