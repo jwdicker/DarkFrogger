@@ -6,11 +6,13 @@ public class Player : MonoBehaviour
 {
     // Jump code
     // public Vector3 jump;
-    public float jumpForce = 3.0f;
+    // public float jumpForce = 3.0f;
 
     // public bool isGrounded;
     private bool canMove = true;
     private Rigidbody rb;
+    
+    [SerializeField] private Vector4 bounds;
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float keyDelay = 0.2f; // Adjust the delay time as needed
@@ -36,25 +38,32 @@ public class Player : MonoBehaviour
     {
         Vector3 inputVector = new Vector3(0, 0, 0);
 
-        if (Input.GetKeyDown(KeyCode.W) && canMove)
+        // Move forward
+        if (Input.GetKeyDown(KeyCode.W) && canMove && (transform.position.z + moveSpeed <= bounds.w))
         {
             inputVector.y = +1;
             canMove = false;
             StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKeyDown(KeyCode.S) && canMove)
+
+        // Move backward
+        if (Input.GetKeyDown(KeyCode.S) && canMove && (transform.position.z - moveSpeed >= bounds.z))
         {
             inputVector.y = -1;
             canMove = false;
             StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKeyDown(KeyCode.A) && canMove)
+
+        // Move left
+        if (Input.GetKeyDown(KeyCode.A) && canMove && (transform.position.x - moveSpeed >= bounds.x))
         {
             inputVector.x = -1;
             canMove = false;
             StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKeyDown(KeyCode.D) && canMove)
+
+        // Move right
+        if (Input.GetKeyDown(KeyCode.D) && canMove && (transform.position.x + moveSpeed <= bounds.y))
         {
             inputVector.x = +1;
             canMove = false;
