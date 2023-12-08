@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // Jump code
-    public Vector3 jump;
+    // public Vector3 jump;
     public float jumpForce = 3.0f;
 
-    public bool isGrounded;
+    // public bool isGrounded;
     private bool canMove = true;
     private Rigidbody rb;
 
@@ -18,13 +18,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        jump = new Vector3(0.0f, 2.0f, 0.0f);
+        // jump = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
-    void OnCollisionStay()
-    {
-        isGrounded = true;
-    }
+    // void OnCollisionStay()
+    // {
+    //     isGrounded = true;
+    // }
 
     private IEnumerator ResetMovementDelay()
     {
@@ -60,15 +60,15 @@ public class Player : MonoBehaviour
             canMove = false;
             StartCoroutine(ResetMovementDelay());
         }
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-        }
+        // if (Input.GetKey(KeyCode.Space) && isGrounded)
+        // {
+        //     rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+        //     isGrounded = false;
+        // }
 
         inputVector = inputVector.normalized;
 
         Vector3 moveDir = new Vector3(inputVector.x, inputVector.z, inputVector.y);
-        transform.position += moveDir * moveSpeed * Time.deltaTime;
+        transform.position += moveDir * moveSpeed;
     }
 }

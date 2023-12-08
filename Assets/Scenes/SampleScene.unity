@@ -2329,11 +2329,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871d3bcb9aa75ab4cb878ce74e32e06b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: {x: 0, y: 0, z: 0}
   jumpForce: 3
-  isGrounded: 0
-  moveSpeed: 250
-  keyDelay: 0.2
+  moveSpeed: 2
+  keyDelay: 0.01
 --- !u!4 &1402180389
 Transform:
   m_ObjectHideFlags: 0
