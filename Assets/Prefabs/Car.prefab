@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directionalSpeed: 10
-  rightDistanceBound: 30
-  leftDistanceBound: 0
+  rightDistanceBound: 66
+  leftDistanceBound: -66
 --- !u!1 &5335202433266785689
 GameObject:
   m_ObjectHideFlags: 0
