@@ -48,10 +48,6 @@ public class Player : MonoBehaviour {
 
         Vector3 moveDir = new Vector3(inputVector.x, inputVector.z, inputVector.y);
         transform.position += moveDir * moveSpeed *  Time.deltaTime;
-        Debug.Log(inputVector);
-    }
-
-    private void OnTriggerEnter() {
-        SceneManager.LoadScene("end", LoadSceneMode.Single);
+        // Debug.Log(inputVector);
     }
 }
