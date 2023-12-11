@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Base/start.unity
     guid: 09da75f2232b9f448a9b6fd7386d27d5
   - enabled: 1
+    path: Assets/Scenes/Fog of War/Fog Of War.unity
+    guid: 66577766379885a449c3b152cc1ba605
+  - enabled: 0
     path: Assets/Scenes/Base/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
