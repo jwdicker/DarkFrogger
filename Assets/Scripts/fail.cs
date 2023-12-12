@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class fail : MonoBehaviour
 {
    public void StartGame(){ 
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }
